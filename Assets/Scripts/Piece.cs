@@ -10,7 +10,7 @@ public class Piece : MonoBehaviour
     private bool isInitialized = false;
     private bool isLocked = false;
 
-    public float fallTime = 1.0f; // Time between automatic drops
+    public float fallTime = 1.0f; 
     private float fallTimer;
 
     public void Initialize(Board board, Vector3Int position, TetrominoData data)
@@ -53,7 +53,7 @@ public class Piece : MonoBehaviour
                 return;
             }
 
-            fallTimer = fallTime; // Reset timer after successful fall
+            fallTimer = fallTime; 
         }
 
         this.board.Set(this);
@@ -78,7 +78,7 @@ public class Piece : MonoBehaviour
             }
             else
             {
-                fallTimer = fallTime; // Reset timer if moved manually
+                fallTimer = fallTime; 
             }
         }
 
@@ -116,7 +116,7 @@ public class Piece : MonoBehaviour
     private void Lock()
     {
         isLocked = true;
-        this.board.Set(this);      // Fix the piece on the board
-        this.board.SpawnPiece();   // Spawn a new one
+        this.board.Set(this);      
+        this.board.SpawnPiece();   
     }
 }

@@ -21,7 +21,7 @@ public class Board : MonoBehaviour
     private void Awake()
     {
         this.tilemap = GetComponentInChildren<Tilemap>();
-        this.activePiece = GetComponentInChildren<Piece>(); // ✅ Get the existing piece from the scene
+        this.activePiece = GetComponentInChildren<Piece>(); 
 
         for (int i = 0; i < this.tetrominoes.Length; i++)
         {
@@ -39,7 +39,7 @@ public class Board : MonoBehaviour
         int random = Random.Range(0, this.tetrominoes.Length);
         TetrominoData data = this.tetrominoes[random];
 
-        // ✅ Just reinitialize the same piece component instead of creating a new one
+        
         this.activePiece.Initialize(this, spawnPosition, data);
         Set(this.activePiece);
     }
